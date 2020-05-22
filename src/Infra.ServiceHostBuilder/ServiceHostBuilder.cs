@@ -66,7 +66,6 @@ namespace NetExtensions.Infra.ServiceHostBuilder
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseKestrel();
-                    webBuilder.UseContentRoot(AppContext.BaseDirectory);
                     webBuilder.UseConfiguration(configuration ?? ServiceConfigurationReader.ServiceConfigurationReader.CreateConfiguration());
                     webBuilder.UseIISIntegration();
                     webBuilder.UseStartup<TStartup>();
